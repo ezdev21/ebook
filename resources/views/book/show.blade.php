@@ -5,6 +5,7 @@
       <p>name {{$book->name}}</p>
       <p>author {{$book->author}}</p>
       <p>uploaded at {{$book->created_at}}</p>
+      <p>uploaded by {{$book->uploaded_by}}</p>
       <form method="post" action="{{route('book.delete',$book->id)}}">
         @delete
         @csrf
