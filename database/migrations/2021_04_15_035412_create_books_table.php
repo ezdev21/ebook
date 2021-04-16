@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('avatar');
             $table->string('author');
+            $table->unsignedBigInteger('uploaded_by');
             $table->timestamps();
         });
     }

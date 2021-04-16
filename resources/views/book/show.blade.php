@@ -5,9 +5,10 @@
       <p>name {{$book->name}}</p>
       <p>author {{$book->author}}</p>
       <p>uploaded at {{$book->created_at}}</p>
-      <form method="post" action="{{route('book.delete',[$book->id]])}}">
-      @csrf
-      <input type="submit" value="delete">
+      <form method="post" action="{{route('book.delete',$book->id)}}">
+        @delete
+        @csrf
+        <input type="submit" value="delete">
       </form>
   </div>  
 @endsection

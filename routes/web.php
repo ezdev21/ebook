@@ -10,12 +10,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [BookController::class, 'index'])->name('home');
 Route::prefix('/book')->group(function (){
- Route::get('{id}/read',[BookController::class,'index']);
- Route::get('{id}/show',[BookController::class,'show']);
- Route::get('upload',[BookController::class,'create']);
- Route::post('upload',[BookController::class,'store']);
- Route::post('{id}/delete',[BookController::class,'delete']);
+ Route::get('read/{id}',[BookController::class,'read'])->name('book.reade');
+ Route::get('show/{id}',[BookController::class,'show'])->name('book.show');
+ Route::get('upload',[BookController::class,'create'])->name('book.create');
+ Route::post('upload',[BookController::class,'store'])->name('book.upload');
+ Route::post('delete/{id}',[BookController::class,'delete'])->name('book.delete');
 });

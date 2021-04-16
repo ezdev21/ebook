@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\ValidateBookFormRequest;
 class BookController extends Controller
 {
     /**
@@ -14,8 +15,15 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $categories=Category::latest()->inRandomOrder()->take(5)->get();
+        return view('home',$categories);
     }
+    public function read($id)
+    {
+        $book=Book::findOrFail($id);
+        return view('book.read',$book);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +32,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('book.create');
     }
 
     /**
@@ -33,9 +41,9 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidationBookFormRequest $request)
     {
-        //
+        
     }
 
     /**
@@ -44,9 +52,10 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show($id)
     {
-        //
+        $book=Book::findOrFail($id);
+        return view('book.show',$book);
     }
 
     /**
