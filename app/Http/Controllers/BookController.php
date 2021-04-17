@@ -47,7 +47,8 @@ class BookController extends Controller
      */
     public function store(ValidateBookFormRequest $request)
     {
-        Book::create($request);
+        $book=Book::create($request);
+        $request->file->storeAs('books',$book->id,'public');
     }
 
     /**
