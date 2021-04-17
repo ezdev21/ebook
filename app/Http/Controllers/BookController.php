@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidateBookFormRequest;
+use Illuminate\Support\Facades\Storage;
 class BookController extends Controller
 {
     /**
@@ -23,7 +24,10 @@ class BookController extends Controller
         $book=Book::findOrFail($id);
         return view('book.read',$book);
     }
-
+    public function download($id){
+        $book=Book::findOrFail($id);
+        Storage::download('/books/'.$book->id);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -41,9 +45,9 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ValidationBookFormRequest $request)
+    public function store(ValidateBookFormRequest $request)
     {
-        
+        Book::create($request);
     }
 
     /**

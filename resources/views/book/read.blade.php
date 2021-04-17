@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div>
+        <p><a href="{{route('book.download',$book->id)}}">Download</a></p>
         <input type="application/pdf" src="{{$book->id}}">
     <div>
        <h2>recommended books</h2>
