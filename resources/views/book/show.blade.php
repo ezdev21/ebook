@@ -11,5 +11,6 @@
         @csrf
         <input type="submit" value="delete">
       </form>
+      <p><a href="{{route('book.delete',$book->id)}}">delete</a></p>
   </div>  
 @endsection

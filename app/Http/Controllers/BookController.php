@@ -92,8 +92,9 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        //
+        $book=Book::findOrFail($id);
+        Storage::delete('/books/'.$book->id);
     }
 }
