@@ -8,7 +8,7 @@
          <label for="name">author</label>
          <input type="text" name="author"><br>
          <input type="file" name="avatar" accept="image/*"><br>
-         <input type="submit" value="add new book" class="">
+         <input type="submit" value="add new book" class="m-3 p-2 bg-blue-900 text-xl rounded text-white">
         </form>
     </div>
 @endsection
