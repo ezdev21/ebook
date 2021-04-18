@@ -11,7 +11,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [BookController::class, 'index'])->name('home');
-Route::prefix('/book')->group(function (){
+Route::prefix('book')->group(function (){
  Route::get('read/{id}',[BookController::class,'read'])->name('book.reade');
  Route::get('show/{id}',[BookController::class,'show'])->name('book.show');
  Route::get('upload',[BookController::class,'create'])->name('book.create');
@@ -19,3 +19,6 @@ Route::prefix('/book')->group(function (){
  Route::post('download/{id}',[BookController::class,'download'])->name('book.download');
  Route::post('delete/{id}',[BookController::class,'delete'])->name('book.delete');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

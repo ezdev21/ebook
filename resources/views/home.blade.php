@@ -1,21 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
-    <searchComponent/>
-    <div>
-      @forelse ($categories as $category)
-       <h2>{{$category->name}}</h2>
-        @foreach ($category->books->take(5) as $book)
-            <div>
-                <img src="'books'.{{$book->avatar}}" alt="no image" width="50px">
-                <p>{{$book->title}}</p>
-                <p>{{$book->author}}</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
             </div>
-        @endforeach
-      @empty
-        <h2>no recommende books yet</h2>
-      @endforelse
+        </div>
     </div>
 </div>
 @endsection
