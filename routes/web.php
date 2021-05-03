@@ -12,7 +12,7 @@ Auth::routes();
 
 Route::get('/home', [BookController::class, 'index'])->name('home');
 Route::prefix('book')->group(function (){
- Route::get('read/{id}',[BookController::class,'read'])->name('book.reade');
+ Route::get('read/{id}',[BookController::class,'read'])->name('book.read');
  Route::get('show/{id}',[BookController::class,'show'])->name('book.show');
  Route::get('upload',[BookController::class,'create'])->name('book.create');
  Route::post('upload',[BookController::class,'store'])->name('book.upload');
