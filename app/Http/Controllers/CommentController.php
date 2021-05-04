@@ -35,7 +35,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment=new Comment;
+        $comment->book_id=$request->book_id;
+        $comment->user_id=$request->user_id;
+        $comment->body=$request->body;
+        $comment->save();
+        return redirect()->route('book.read',['id'=>$request->book_id]);
     }
 
     /**

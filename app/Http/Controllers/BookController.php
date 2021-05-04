@@ -23,11 +23,12 @@ class BookController extends Controller
     public function read($id)
     {
         $book=Book::findOrFail($id);
-        return view('book.read',$book);
+        $recommendedBooks=Book::latest()->take(20)->get();
+        return view('book.read',['book'=>$book,'recommendedBooks'=>$recommendedBooks]);
     }
     public function download($id){
         $book=Book::findOrFail($id);
-        Storage::download('/books/'.$book->id);
+        Storage::download('storage/books/'.$book->id.'.pdf');
     }
 
     /**

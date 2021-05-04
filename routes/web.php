@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/',[BookController::class,'index'])->name('books');
 
@@ -15,7 +16,7 @@ Route::prefix('book')->group(function (){
  Route::get('show/{id}',[BookController::class,'show'])->name('book.show');
  Route::get('upload',[BookController::class,'create'])->name('book.create');
  Route::post('upload',[BookController::class,'store'])->name('book.upload');
- Route::post('download/{id}',[BookController::class,'download'])->name('book.download');
+ Route::get('download/{id}',[BookController::class,'download'])->name('book.download');
  Route::post('delete/{id}',[BookController::class,'delete'])->name('book.delete');
 });
-
+Route::post('comment',[CommentController::class,'store'])->name('comment');

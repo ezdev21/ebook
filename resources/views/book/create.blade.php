@@ -3,7 +3,7 @@
     <div class="bg-gray-300 p-3 -mt-6">
         <form method="post" action="{{route('book.upload')}}" enctype="multipart/form-data">
          @csrf
-         <input type="hidden" value="{{Auth::user()->id}}">
+         <input type="hidden" name="uploaded_by" value="{{Auth::user()->id}}">
          <label for="title" class="text-xl">book title</label>
          <input type="text" name="title" class="w-50 h-10 block text-xl m-2" placeholder="book title" required>
           @if ($errors->has('title'))

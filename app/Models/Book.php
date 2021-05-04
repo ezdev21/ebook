@@ -16,7 +16,7 @@ class Book extends Model
     {
         $this->hasMany(Comment::class);
     }
-    public function stars()
+    public function star()
     {
         return $this->belongsToMany(User::class);
     }
