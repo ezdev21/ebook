@@ -16,8 +16,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        $categories=Category::latest()->inRandomOrder()->take(5)->get();
-        return view('home',$categories);
+        $books=Book::latest()->take(40)->inRandomOrder()->get();
+        //$categories=Category::latest()->inRandomOrder()->take(5)->get();
+        return view('home',$books);
     }
     public function read($id)
     {
