@@ -21,9 +21,12 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-green-600 shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-green-900 shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('book.create') }}">
+                <a class="text-xl text-white m-1" href="/">
+                    Home
+                </a>
+                <a class="text-xl text-white m-1" href="{{ route('book.create') }}">
                     upload
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

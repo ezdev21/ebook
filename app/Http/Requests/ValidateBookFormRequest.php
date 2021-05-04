@@ -24,24 +24,27 @@ class ValidateBookFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>['required','string','min:3','max:20'],
-            'author'=>['required','string','min:3','max:20'],
-            'avatar'=>['required','image']
+            'title'=>['required','string','min:3','max:30'],
+            'author'=>['required','string','min:3','max:30'],
+            'cover'=>['required','image'],
+            'file'=>['required','file']
         ];
     }
     public function messages()
     {
         return [
-            'name.required'=>'book name is required',
-            'name.string'=>'book name should be a string',
-            'name.min'=>'book name should be minimum of 3 characters',
-            'name.max'=>'book name should be maximum of 20 characters',
+            'title.required'=>'book title is required',
+            'title.string'=>'book title should be a string',
+            'title.min'=>'book name should be minimum of 2 characters',
+            'title.max'=>'book name should be maximum of 30 characters',
             'author.required'=>'book author name is required',
             'author.string'=>'author name should be a string',
             'author.min'=>'book name should be minimum of 3 characters',
-            'author.max'=>'book name should be maximum of 20 characters',
-            'avatar.required'=>'book cover is required',
-            'avatar.image'=>'book cover should be image'
+            'author.max'=>'book name should be maximum of 30 characters',
+            'cover.required'=>'book cover is required',
+            'cover.image'=>'book cover should be image',
+            'file.required'=>'pdf file is required',
+            'file.file'=>'please select pdf file only'
         ];
     }
 }

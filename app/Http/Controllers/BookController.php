@@ -18,7 +18,7 @@ class BookController extends Controller
     {
         $books=Book::latest()->take(40)->inRandomOrder()->get();
         //$categories=Category::latest()->inRandomOrder()->take(5)->get();
-        return view('home',$books);
+        return view('book.books',['books'=>$books]);
     }
     public function read($id)
     {
@@ -48,8 +48,17 @@ class BookController extends Controller
      */
     public function store(ValidateBookFormRequest $request)
     {
-        $book=Book::create($request);
-        $request->file->storeAs('books',$book->id,'public');
+        $book=new Book;
+        $book->title=$request->title;
+        $book->author=$request->author;
+        $book->uploaded_by=$request->uploaded_by;
+        $book->save();
+        $extension=$request->cover->extension();
+        $book->cover=$book->id.'.'.$extension;
+        $book->save();
+        $request->cover->storeAs('covers',$book->cover,'public');
+        $request->file->storeAs('books',$book->id.'.pdf','public');
+        return redirect()->route('books');
     }
 
     /**
