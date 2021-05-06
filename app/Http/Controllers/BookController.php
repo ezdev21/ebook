@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidateBookFormRequest;
 use Illuminate\Support\Facades\Storage;
+
 class BookController extends Controller
 {
     /**
@@ -38,7 +39,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('book.create');
+        $categories=Category::all();
+        return view('book.create',['categories'=>$categories]);
     }
 
     /**
@@ -52,6 +54,7 @@ class BookController extends Controller
         $book=new Book;
         $book->title=$request->title;
         $book->author=$request->author;
+        $book->category=$request->category;
         $book->uploaded_by=$request->uploaded_by;
         $book->save();
         $extension=$request->cover->extension();

@@ -14,6 +14,13 @@
          @if ($errors->has('author'))
              <p class="text-red-600 text-xl text-bold">{{$errors->first('author')}}</p>
           @endif
+          <label for="category" class="text-xl">category</label>
+          <select name="category" id="" class="block w-max text-xl m-1">
+              <option value="" disabled selected>category</option>
+              @foreach ($categories as $category)
+                  <option value="{{$category->id}}">{{$category->name}}</option>
+              @endforeach
+          </select>
          <label for="cover" class="text-xl">upload book cover</label>
          <input type="file" name="cover" accept="image/*" class="text-xl block m-2" required>
          @if ($errors->has('cover'))
