@@ -11,11 +11,11 @@
           @endif
          <label for="author" class="text-xl">author</label>
          <input type="text" name="author" class="w-50 h-10 block text-xl m-2" placeholder="author name" required>
-         @if ($errors->has('author'))
+          @if ($errors->has('author'))
              <p class="text-red-600 text-xl text-bold">{{$errors->first('author')}}</p>
           @endif
           <label for="category" class="text-xl">category</label>
-          <select name="category" id="" class="block w-max text-xl m-1">
+          <select name="category" required class="block w-max text-xl m-1 px-1">
               <option value="" disabled selected>category</option>
               @foreach ($categories as $category)
                   <option value="{{$category->id}}">{{$category->name}}</option>

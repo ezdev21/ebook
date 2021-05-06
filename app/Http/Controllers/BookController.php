@@ -54,7 +54,7 @@ class BookController extends Controller
         $book=new Book;
         $book->title=$request->title;
         $book->author=$request->author;
-        $book->category=$request->category;
+        $book->category_id=$request->category;
         $book->uploaded_by=$request->uploaded_by;
         $book->save();
         $extension=$request->cover->extension();
