@@ -10,11 +10,11 @@ class Book extends Model
     use HasFactory;
     public function categories()
     {
-        $this->belongsToMany(Category::class);
+        return $this->belongsToMany(Category::class);
     }
     public function comments()
     {
-        $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class);
     }
     public function star()
     {

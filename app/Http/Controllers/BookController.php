@@ -29,7 +29,7 @@ class BookController extends Controller
     }
     public function download($id){
         $book=Book::findOrFail($id);
-        Storage::download('storage/books/'.$book->id.'.pdf');
+        return Storage::download("/storage/books/1".$book->id.".pdf");
     }
 
     /**
@@ -74,7 +74,7 @@ class BookController extends Controller
     public function show($id)
     {
         $book=Book::findOrFail($id);
-        return view('book.show',$book);
+        return view('book.show',['book'=>$book]);
     }
 
     /**
@@ -109,6 +109,7 @@ class BookController extends Controller
     public function destroy($id)
     {
         $book=Book::findOrFail($id);
-        Storage::delete('/books/'.$book->id);
+        $book->delete();
+        Storage::delete('/storage/books/'.$book->id);
     }
 }
