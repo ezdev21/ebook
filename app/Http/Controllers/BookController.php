@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidateBookFormRequest;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\DB;
 class BookController extends Controller
 {
     /**
@@ -111,5 +111,40 @@ class BookController extends Controller
         $book=Book::findOrFail($id);
         $book->delete();
         Storage::delete('/storage/books/'.$book->id);
+    }
+    public function search(Request $request)
+    {
+        $category=$request->category;
+        $searchBy=$request->searchBy;
+        $searchQuery=$request->searchQuery;
+        if($category=='all'){
+            $books=Book::where([$searchBy,$searchQuery]);
+        }
+        else{
+           $books=Book::where([['category',$category],[[$searchBy,$searchQuery]]]); 
+        }
+        return view('book.search',['books'=>$books,'searchQuery'=>$searchQuery]);
+    }
+    public function getStar(Request $request)
+    {
+      if(DB::table('book_user')->where([['book_id',$request->bookId],['user_id',$request->userId]])->exists())
+      {
+        $starred=true;  
+      }
+      else{
+        $starred=false;  
+      }
+      $totalStars=DB::table('book_user')->where(['book_id',$request->bookId])->count();
+      return response()->json(['starred'=>$starred,'totalStars'=>$totalStars]);
+    }
+    public function postStar(Request $request)
+    {
+       if(DB::table('book_user')->where([['book_id',$request->bookId],['user_id',$request->userId]])->exists())
+       {
+          
+       }
+       else{
+         DB::table('book_user')->insert(['user_id'=>$request->userId,'book_id'=>$request->bookId]);  
+       }
     }
 }

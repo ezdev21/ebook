@@ -18,5 +18,8 @@ Route::prefix('book')->group(function (){
  Route::post('upload',[BookController::class,'store'])->name('book.upload');
  Route::get('download/{id}',[BookController::class,'download'])->name('book.download');
  Route::post('delete/{id}',[BookController::class,'delete'])->name('book.delete');
+ Route::post('search',[BookController::class,'search'])->name('book.search');
+ Route::get('/star',[BookController::class,'getStar']);
+ Route::post('star',[BookController::class,'postStar']);
 });
 Route::post('comment',[CommentController::class,'store'])->name('comment');

@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('content')
     <div class="flex">
-        <div class="flex-auto w-3/4">
+        <div class="flex-auto w-full p-2 h-full">
             <p><a href="{{route('book.download',$book->id)}}"
                 class="text-xl bg-green-700 text-white text-bold rounded m-1 p-1 hover:no-underline">
                 Download</a></p>
             <iframe type="application/pdf" src="/storage/books/{{$book->id}}.pdf" 
-                width="500" class=""></iframe>
+             class="w-full h-full m-2"></iframe>
             <p>
              <span class="text-xl">{{$book->star->count()}}</span>
             @auth
-              <star-component bookid="{{$book->id}}" userid="{{Auth::user()->id}}"/>
+              <star-component book-id="{{$book->id}}" user-id="{{Auth::user()->id}}"/>
             @endauth
             </p>
             <div>
@@ -38,17 +38,17 @@
                   @endforeach  
             </div>
         </div>
-        <div class="flex-auto w-1/4 flow-row justify-center">
+        <div class="flex flex-auto w-1/4 flex-col justify-center">
             <p class="text-2xl text-bold text-center">recommended books</p>
-            <div class="flex justify-center flow-col">
+            <div class="flex flex-col">
                 @foreach ($recommendedBooks as $books)
-                <a href="{{route('book.read',$book->id)}}">
-                 <div>
-                    <img src="/storage/covers/{{$book->cover}}" alt="" width="200px">
-                    <p>{{$book->title}}</p>
-                    <p>{{$book->author}}</p>
-                 </div>
-                </a>
+                <div class="flex-auto justify-center p-1 m-1">
+                 <a href="{{route('book.read',$book->id)}}">
+                  <img src="/storage/covers/{{$book->cover}}" alt="" width="200px">
+                  <p>{{$book->title}}</p>
+                  <p>{{$book->author}}</p>
+                 </a>
+                </div>
             @endforeach
             </div>
          </div>
