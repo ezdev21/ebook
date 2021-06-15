@@ -1,12 +1,14 @@
 @extends('layouts.app')
 @section('content')
-    <div class="flex">
-        <div class="flex-auto w-full p-2 h-full">
+    <div class="lg:flex xl:flex">
+        <div class="flex-auto w-full p-2 h-full bg-green-500">
             <p><a href="{{route('book.download',$book->id)}}"
                 class="text-xl bg-green-700 text-white text-bold rounded m-1 p-1 hover:no-underline">
                 Download</a></p>
-            <iframe type="application/pdf" src="/storage/books/{{$book->id}}.pdf" 
-             class="w-full h-full m-2"></iframe>
+            <div class="">
+                <iframe type="application/pdf" src="/storage/books/{{$book->id}}.pdf" 
+                    class="w-full h-max m-2" height="600px"></iframe>   
+            </div>
             <p>
              <span class="text-xl">{{$book->star->count()}}</span>
             @auth
@@ -38,7 +40,7 @@
                   @endforeach  
             </div>
         </div>
-        <div class="flex flex-auto w-1/4 flex-col justify-center">
+        <div class="flex flex-auto w-1/4 flex-col">
             <p class="text-2xl text-bold text-center">recommended books</p>
             <div class="flex flex-col">
                 @foreach ($recommendedBooks as $books)

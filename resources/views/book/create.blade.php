@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
  @auth
- <div class="bg-blue-200 p-3 mx-auto w-1/2">
+ <div class="bg-blue-200 p-5 mx-auto w-1/2 rounded-xl">
     <form method="post" action="{{route('book.upload')}}" enctype="multipart/form-data">
      @csrf
      <input type="hidden" name="uploaded_by" value="{{Auth::user()->id}}">

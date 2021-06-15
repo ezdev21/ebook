@@ -29,7 +29,7 @@ class BookController extends Controller
     }
     public function download($id){
         $book=Book::findOrFail($id);
-        return Storage::download("/storage/books/1".$book->id.".pdf");
+        return Storage::download('/storage/books/'.$book->id.'.pdf');
     }
 
     /**
@@ -118,10 +118,10 @@ class BookController extends Controller
         $searchBy=$request->searchBy;
         $searchQuery=$request->searchQuery;
         if($category=='all'){
-            $books=Book::where([$searchBy,$searchQuery]);
+            $books=Book::where($searchBy,'like',"%${searchQuery}%");
         }
         else{
-           $books=Book::where([['category',$category],[[$searchBy,$searchQuery]]]); 
+           $books=Book::where([['category','like',$category],[['name','like',"${searchQuery}"]]]); 
         }
         return view('book.search',['books'=>$books,'searchQuery'=>$searchQuery]);
     }

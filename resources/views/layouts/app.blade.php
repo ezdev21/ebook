@@ -32,7 +32,7 @@
                 <form method="POST" action="{{route('book.search')}}" class="w-full flex ml-10 px-2">
                  {{ csrf_field() }}
                  <select name="category" id="" required class="my-auto bg-green-900 text-xl text-white">
-                    <option value="all" disabled selected>all</option>
+                    <option value="all" selected>all</option>
                     @foreach ($categories as $category)
                       <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach 
