@@ -1,13 +1,15 @@
 <template>
-  <span class="text-xl">{{totalStars}}</span>
-  <button @click="star" class="rouned p-1 text-xl text-white bg-green-900">star</button>   
+  <div> 
+   <span class="text-xl">{{totalStars}}</span>
+  <button @click="star" class="rounded p-1 text-xl text-white bg-green-900">star</button>  
+  </div>   
 </template>
 <script>
 export default {
   props:['userId','bookId'],
   data(){
    return{
-    
+    stars:0
    }  
   },
   mounted(){
