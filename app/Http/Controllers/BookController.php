@@ -60,6 +60,7 @@ class BookController extends Controller
         $extension=$request->cover->extension();
         $book->cover=$book->id.'.'.$extension;
         $book->save();
+        $request->cover->fit(300,300);
         $request->cover->storeAs('covers',$book->cover,'public');
         $request->file->storeAs('books',$book->id.'.pdf','public');
         return redirect()->route('books');
@@ -118,10 +119,10 @@ class BookController extends Controller
         $searchBy=$request->searchBy;
         $searchQuery=$request->searchQuery;
         if($category=='all'){
-            $books=Book::where($searchBy,'like',"%${searchQuery}%");
+            $books=Book::where($searchBy,'like',"%${searchQuery}%")->get();
         }
         else{
-           $books=Book::where([['category','like',$category],[['name','like',"${searchQuery}"]]]); 
+           $books=Book::where([['category','like',$category],[['name','like',"${searchQuery}"]]])->get(); 
         }
         return view('book.search',['books'=>$books,'searchQuery'=>$searchQuery]);
     }
