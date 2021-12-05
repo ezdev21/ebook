@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-green-900 shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-first shadow-sm">
             <div class="container">
                 <a class="text-xl text-white m-1" href="/">
                     Home
