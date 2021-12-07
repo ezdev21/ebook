@@ -12,4 +12,16 @@ class Author extends Model
     {
       return $this->hasMany(Book::class);  
     }
+    public function newspapers()
+    {
+      return $this->hasMany(Newspaper::class);
+    }
+    public function megazines()
+    {
+      return $this->hasMany(Megazine::class);
+    }
+    public function blogs()
+    {
+      return $this->hasMany(Blog::class);
+    }
 }

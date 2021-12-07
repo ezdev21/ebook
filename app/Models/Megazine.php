@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Megazine extends Model
 {
     use HasFactory;
+    public function author()
+    {
+      return $this->belongsTo(Author::class);
+    }
 }
