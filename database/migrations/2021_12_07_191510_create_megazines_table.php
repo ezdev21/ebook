@@ -15,6 +15,9 @@ class CreateMegazinesTable extends Migration
     {
         Schema::create('megazines', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('photo');
+            $table->string('file');
             $table->timestamps();
         });
     }

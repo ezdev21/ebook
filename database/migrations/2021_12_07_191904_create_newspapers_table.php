@@ -15,6 +15,9 @@ class CreateNewspapersTable extends Migration
     {
         Schema::create('newspapers', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('photo');
+            $table->string('file');
             $table->timestamps();
         });
     }

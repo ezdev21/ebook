@@ -15,6 +15,9 @@ class CreateAudioBooksTable extends Migration
     {
         Schema::create('audio_books', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('photo');
+            $table->string('file');
             $table->timestamps();
         });
     }
