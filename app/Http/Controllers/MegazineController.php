@@ -15,7 +15,7 @@ class MegazineController extends Controller
      */
     public function index()
     {
-        //
+      return view('megazine.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class MegazineController extends Controller
      */
     public function create()
     {
-        //
+      return view('megazine.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class MegazineController extends Controller
      */
     public function store(StoreMegazineRequest $request)
     {
-        //
+        $megazine=new Megazine();
+        $megazine->title=$request->title;
+        $megazine->save();
+        $extension=$request->photo->extension();
+        $megazine->photo=$megazine->id.$extension;
+        $megazine->file=$megazine->id.'pdf';
+        $megazine->save();
+        $request->file->saveAs('public',$megazine->file,'audiobooks');
+        $megazine->save();
     }
 
     /**
@@ -47,7 +55,7 @@ class MegazineController extends Controller
      */
     public function show(Megazine $megazine)
     {
-        //
+      return view('megazine.show',['megazine'=>$megazine]);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Newspaper;
 use App\Http\Requests\StoreNewspaperRequest;
 use App\Http\Requests\UpdateNewspaperRequest;
+use App\Models\Megazine;
 
 class NewspaperController extends Controller
 {
@@ -15,7 +16,7 @@ class NewspaperController extends Controller
      */
     public function index()
     {
-        //
+      return view('newspaper.index');
     }
 
     /**
@@ -25,7 +26,7 @@ class NewspaperController extends Controller
      */
     public function create()
     {
-        //
+      return view('newspaper.create');
     }
 
     /**
@@ -36,7 +37,15 @@ class NewspaperController extends Controller
      */
     public function store(StoreNewspaperRequest $request)
     {
-        //
+      $newspaper=new Megazine();
+      $newspaper->title=$request->title;
+      $newspaper->save();
+      $extension=$request->photo->extension();
+      $newspaper->photo=$newspaper->id.$extension;
+      $newspaper->file=$newspaper->id.'pdf';
+      $newspaper->save();
+      $request->file->saveAs('public',$newspaper->file,'audiobooks');
+      $newspaper->save();
     }
 
     /**
@@ -47,7 +56,7 @@ class NewspaperController extends Controller
      */
     public function show(Newspaper $newspaper)
     {
-        //
+      return view('newspaper.show',['newspaper'=>$newspaper]);
     }
 
     /**
