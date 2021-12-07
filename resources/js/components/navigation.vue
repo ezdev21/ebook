@@ -1,19 +1,19 @@
 <template>
  <div class="flex justify-evenly items-center bg-first">
   <div class="">
-   <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-   </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-book-half w-32 text-white" viewBox="0 0 16 16">
+      <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+    </svg>
   </div>
   <div class="py-1 pr-5 mx-2 mx-5">
     <div class="flex justify-between items-center py-1 border-b-2 border-second">
     <div class="rounded-4xl mr-5">
-      <form @submit.prevent="search" class="flex items-center">
-        <select class="text-first px-2 text-xl border-r-2 border-first">
+      <form @submit.prevent="search" class="flex">
+        <select class="text-gray-700 px-2 text-xl border-r-2 border-first">
           <option value="">Category</option>
           <option v-for="category in categories" :key="category.id" value="">{{category.name}}</option>
         </select>
-       <input type="text" v-model="searchQuery" required class="w-96 py-2.5 px-3 text-lg lg:text-xl xl:text-xl 2xl:text-xl outline-none focus:border-b-2 border-tiruhakim" placeholder="search 10 books">
+       <input type="text" v-model="searchQuery" required class="text-first w-96 py-2.5 px-3 text-lg lg:text-xl xl:text-xl 2xl:text-xl outline-none focus:border-b-2 border-tiruhakim" :placeholder="`search ${totalBooks} books`">
        <button type="submit" class="bg-second capitalize rounded-r-3xl lg:rounded-r-3xl xl:rounded-r-3xl 2xl:rounded-r-3xl text-xl lg:text-3xl xl:text-2xl 2xl:text-2xl py-2.5 px-5 my-auto">
          <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -39,19 +39,19 @@
      </div>
      <div v-else class="flex text-white text-2xl w-full items-center">
      <a href="/login" class="mx-2 rounded px-2 py-1 my-auto">LogIn</a>
-     <button class="text-white bg-second flex items-center-center mx-2 rounded-3xl px-5 py-1.5">
-       <a href="/register" class="my-auto">Register</a>  
+     <button class="text-white bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5">
+       <a href="/register">Register</a>  
      </button>
      </div> 
      <div v-if="userDropdownMenu" class="fixed z-20 text-xl bg-gray-100 top-2 right-2">
       <ul>
-       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/">home</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/profile/edit">my profile</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/user/products">my products</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/product/create">add product</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/order">order</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/about">contact us</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1 text-white">
+       <li class="hover:bg-blue-200 px-5 py-1"><a href="/" class="text-white">home</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href="/profile/edit">my profile</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href="/user/products">my products</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href="/product/create">add product</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href="/book/rent">rent</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href="/about">contact us</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1">
         <button @click="logout">logout</button>  
        </li>  
       </ul>
@@ -60,24 +60,24 @@
     </div> 
    </div>
    <div class="py-1 flex justify-between items-center">
-    <div class="bg-second flex rounded-sm">
+    <div class="flex rounded-sm">
       <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-      <select class="bg-second my-auto text-xl text-white">
+      <select class="text-xl bg-first">
         <option value="" class="my-auto">read by Category</option>
         <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
       </select>
     </div>
-    <div class="text-lg">
+    <div class="text-white text-lg">
       <ul class="flex items-center">
-       <li class="mx-4"><a class="mx-auto text-black no-underline" href="/">Home</a></li>
-       <li class="mx-4"><a class="mx-auto text-black no-underline" href="/">News</a></li>
-       <li class="mx-4"><a class="mx-auto text-black no-underline" href="/">Vendors</a></li>
-       <li class="mx-4 "><a class="mx-auto text-black no-underline" href="/">Suppliers</a></li>
+       <li class="mx-4"><a class="mx-auto no-underline" href="/">Home</a></li>
+       <li class="mx-4"><a class="mx-auto no-underline" href="/">Kids</a></li>
+       <li class="mx-4"><a class="mx-auto no-underline" href="/">Event</a></li>
+       <li class="mx-4 "><a class="mx-auto no-underline" href="/">New</a></li>
       </ul>
     </div>
-    <div class="text-white text-xl">
+    <div class="text-white text-lg">
      <ul class="flex items-center">
        <li class="mx-3">
          <button>
@@ -112,6 +112,7 @@ export default {
       categoryId:'all',
       searchQuery:'',
       categories:[],
+      totalBooks:0,
       userDropdownMenu:false,
     }
    },

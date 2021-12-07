@@ -31837,27 +31837,27 @@ video {
 }
 
 .bg-first{
-  background-color: #1d4354;
+  background-color: #00455e;
 }
 
 .text-first{
-  color:#1d4354;
+  color:#00455e;
 }
 
 .border-first{
-  border-color: #1d4354;
+  border-color: #00455e;
 }
 
 .bg-second{
-  background-color: #35657a;
+  background-color: #358597;
 }
 
 .text-second{
-  color: #35657a;
+  color: #358597;
 }
 
 .border-second{
-  border-color: #35657a;
+  border-color: #358597;
 }
 
 @media (min-width: 640px) {
