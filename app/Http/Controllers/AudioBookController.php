@@ -15,7 +15,8 @@ class AudioBookController extends Controller
      */
     public function index()
     {
-        //
+      $audioBooks=AudioBook::latest()->get();
+      return view('audiobook.index');
     }
 
     /**
@@ -25,7 +26,7 @@ class AudioBookController extends Controller
      */
     public function create()
     {
-        //
+      return view('audiobook.create');
     }
 
     /**
@@ -36,7 +37,14 @@ class AudioBookController extends Controller
      */
     public function store(StoreAudioBookRequest $request)
     {
-        //
+      $audioBook=new AudioBook();
+      $audioBook->title=$request->title;
+      $audioBook->save();
+      $extension=$request->photo->extension();
+      $audioBook->photo=$audioBook->id.$extension;
+      $audioBook->file=$audioBook->id.'pdf';
+      $audioBook->save();
+      $request->file->saveAs('public',$audioBook->file,'audiobooks');
     }
 
     /**
@@ -47,7 +55,7 @@ class AudioBookController extends Controller
      */
     public function show(AudioBook $audioBook)
     {
-        //
+      return view('audiobook.show',['audioBook'=>$audioBook]);
     }
 
     /**

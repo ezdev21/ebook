@@ -14,9 +14,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+      return view('auhor.index');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +24,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+      return view('author.create');
     }
 
     /**
@@ -35,7 +35,10 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $author=new Author();
+      $author->name=$request->name;
+      $author->email=$request->email;
+      $author->save();
     }
 
     /**
@@ -46,7 +49,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+      return view('author.show',['author'=>$author]);
     }
 
     /**
