@@ -8,3 +8,15 @@
 .text-first{
  color:#1d4354;
 }
+.border-first{
+ border-color: #1d4354;
+}
+.bg-second{
+ background-color: #35657a;
+}
+.text-second{
+ color: #35657a;
+}
+.border-second{
+ border-color: #35657a;
+}
