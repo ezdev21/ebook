@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .bg-first{
- background-color: #00455e;
+ background-color: #006e96;
 }
 .text-first{
- color:#00455e;
+ color:#006e96;
 }
 .border-first{
- border-color: #00455e;
+ border-color: #006e96
 }
 .bg-second{
  background-color: #358597;
