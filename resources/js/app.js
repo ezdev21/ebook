@@ -7,7 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
-
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+Vue.use(Vuetify)
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -29,4 +31,5 @@ Vue.component('star-component',require('./components/starComponent.vue').default
 
 const app = new Vue({
     el: '#app',
+    vuetify:Vuetify
 });
