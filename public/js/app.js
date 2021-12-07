@@ -37972,7 +37972,7 @@ var render = function () {
             _vm._v(" "),
             _c(
               "select",
-              { staticClass: "text-xl" },
+              { staticClass: "text-xl bg-first text-white" },
               [
                 _c("option", { staticClass: "my-auto", attrs: { value: "" } }, [
                   _vm._v("read by Category"),

@@ -64,7 +64,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
-      <select class="text-xl bg-first">
+      <select class="text-xl bg-first text-white">
         <option value="" class="my-auto">read by Category</option>
         <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
       </select>
