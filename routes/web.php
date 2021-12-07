@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 
 Route::get('/',[BookController::class,'index'])->name('books');

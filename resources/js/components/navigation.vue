@@ -1,14 +1,14 @@
 <template>
- <div class="flex justify-evenly bg-first w-full py-1">
+ <div class="flex justify-evenly items-center bg-first">
   <div class="">
    <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
    </svg>
   </div>
   <div class="py-1 pr-5 mx-2 mx-5">
-    <div class="flex justify-between py-2 border-b-2 border-second">
-    <div class="rounded-4xl my-auto py-auto mr-5">
-      <form @submit.prevent="search" class="flex">
+    <div class="flex justify-between items-center py-1 border-b-2 border-second">
+    <div class="rounded-4xl mr-5">
+      <form @submit.prevent="search" class="flex items-center">
         <select class="text-first px-2 text-xl border-r-2 border-first">
           <option value="">Category</option>
           <option v-for="category in categories" :key="category.id" value="">{{category.name}}</option>
@@ -43,15 +43,15 @@
        <a href="/register" class="my-auto">Register</a>  
      </button>
      </div> 
-     <div v-if="userDropdownMenu" class="text-white fixed z-20 text-xl bg-gray-100 top-2 right-2">
+     <div v-if="userDropdownMenu" class="fixed z-20 text-xl bg-gray-100 top-2 right-2">
       <ul>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/">home</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/profile/edit">my profile</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/user/products">my products</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/product/create">add product</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/order">order</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/about">contact us</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1">
+       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/">home</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/profile/edit">my profile</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/user/products">my products</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/product/create">add product</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/order">order</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1 text-white"><a href="/about">contact us</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1 text-white">
         <button @click="logout">logout</button>  
        </li>  
       </ul>
@@ -59,18 +59,18 @@
      <div v-if="userDropdownMenu" @click="userDropdownMenu=false" class="absolute z-10 -inset-y-0 -inset-x-0 bg-black opacity-50"></div>
     </div> 
    </div>
-   <div class="py-2 my-auto flex justify-between">
+   <div class="py-1 flex justify-between items-center">
     <div class="bg-second flex rounded-sm">
       <svg xmlns="http://www.w3.org/2000/svg" class="text-white w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
       <select class="bg-second my-auto text-xl text-white">
-        <option value="" class="my-auto">Shop by Category</option>
+        <option value="" class="my-auto">read by Category</option>
         <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
       </select>
     </div>
-    <div class="text-lg my-auto">
-      <ul class="flex my-auto">
+    <div class="text-lg">
+      <ul class="flex items-center">
        <li class="mx-4"><a class="mx-auto text-black no-underline" href="/">Home</a></li>
        <li class="mx-4"><a class="mx-auto text-black no-underline" href="/">News</a></li>
        <li class="mx-4"><a class="mx-auto text-black no-underline" href="/">Vendors</a></li>
@@ -78,7 +78,7 @@
       </ul>
     </div>
     <div class="text-white text-xl">
-     <ul class="flex">
+     <ul class="flex items-center">
        <li class="mx-3">
          <button>
            Become a Seller
@@ -103,7 +103,7 @@ export default {
    props:{
      user:{
        type:Object,
-       required:true
+       required:false
      }
    },
    data(){

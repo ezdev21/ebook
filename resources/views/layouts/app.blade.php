@@ -18,12 +18,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-liberary" >
  <div id="app">
   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
     @csrf
   </form>
-  <div>
+  <div class="w-5/6 mx-auto">
    <navigation-component @auth :user="{{auth()->user}}" @endauth/>   
   </div>
   <main class=" py-1">
