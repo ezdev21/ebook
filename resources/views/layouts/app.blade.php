@@ -24,7 +24,7 @@
     @csrf
   </form>
   <div>
-   <navigation-component/>   
+   <navigation-component @auth :user="{{auth()->user}}" @endauth/>   
   </div>
   <main class=" py-1">
     @yield('content')

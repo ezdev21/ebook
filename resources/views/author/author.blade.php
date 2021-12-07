@@ -3,10 +3,10 @@
  <div>
   <div class="flex">
    <img src="" alt="">
-   <div>
-    <p>name {{$author->name}}</p>
+   <div class="text-xl text-semibold">
+    <p>{{$author->name}}</p>
     <p>total books {{$author->books->count()}}</p>    
-   </div>   
+   </div>
   </div>
   <div class="flex">
    @foreach ($author->books as $book)

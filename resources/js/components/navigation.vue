@@ -4,7 +4,7 @@
     <div class="rounded-4xl mx-3">
       <form @submit.prevent="search" class="flex">
        <select class="">
-         <option value="">categoryy</option>
+         <option value="">category</option>
          <option v-for="category in categories" :key="category.id" value="category.id">{{category}}</option>
        </select>
        <input type="text" v-model="searchQuery" required class="w-96 py-2.5 px-3 text-lg lg:text-xl xl:text-xl 2xl:text-xl outline-none focus:border-b-2 border-tiruhakim rounded-l-3xl" placeholder="search...">
@@ -62,7 +62,6 @@
  </div>
 </template>
 <script>
-import notification from'./notification.vue';
 export default {
    props:{
     user:{
@@ -70,11 +69,9 @@ export default {
      required:true
     }
    },
-   components:{
-    notification
-   },
    data(){
     return{
+      categories:[],
       searchQuery:'',
       userDropdownMenu:false,
     }
