@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <title></title>
-</head>
-<body>
-    <div>
-        <nav>
-            <a href="{{route('login')}}" class="text-xl no-undeline text-blue-500">sign in</a>
-            <a href="{{route('register')}}"
-             class="text-xl no-underline bg-blue-500 text-white">sign up</a>
-        </nav>
-    </div>
-</body>
-</html>
+@extends('layouts.app')
+@section('content')
+ <div class="bg-liberary bg-fixed w-full h-full bg-cover">
+  <div class="absolute top-1/3 right-1/4 p-5 bg-red-800 opacity-75 w-1/3 rounded-3xl">
+    <search-component/>
+  </div>   
+ </div>   
+@endsection
