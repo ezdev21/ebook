@@ -26,6 +26,9 @@
   <div class="w-full lg:w-11/12 mx-auto">
    <navigation-component @auth :user="{{auth()->user}}" @endauth/>   
   </div>
+  <div class="absolute top-1/3 right-1/4 p-5 bg-red-800 opacity-75 w-1/3 rounded-3xl">
+    <search-component/>
+  </div>
   <main class=" py-1">
     @yield('content')
   </main>
