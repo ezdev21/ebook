@@ -15,7 +15,8 @@ class DiscussionController extends Controller
      */
     public function index()
     {
-      return view('discussion.discussion');
+      $discussions=Discussion::latest()->get();  
+      return view('discussion.discussion',['discussions'=>$discussions]);
     }
 
     /**
