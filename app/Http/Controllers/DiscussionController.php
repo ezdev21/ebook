@@ -15,7 +15,7 @@ class DiscussionController extends Controller
      */
     public function index()
     {
-        //
+      return view('discussion.discussion');
     }
 
     /**
