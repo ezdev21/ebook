@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('content')
  <div>
-   
+  <div>
+  <event-search-component/> 
+  </div> 
+  <div>
+   <h1>events</h1>
+   <events-component/>
+  </div>
  </div>   
 @endsection
