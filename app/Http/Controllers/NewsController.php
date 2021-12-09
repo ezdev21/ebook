@@ -15,7 +15,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+      $news=News::latest()->get();  
+      return view('news.index',compact('news'));
     }
 
     /**
@@ -25,7 +26,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+      return view('news.create');
     }
 
     /**
@@ -36,7 +37,8 @@ class NewsController extends Controller
      */
     public function store(StoreNewsRequest $request)
     {
-        //
+      $news=new News();
+      $news->save();
     }
 
     /**
@@ -47,7 +49,7 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+      return view('news.show');
     }
 
     /**
