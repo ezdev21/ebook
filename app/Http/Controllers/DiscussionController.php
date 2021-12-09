@@ -26,7 +26,7 @@ class DiscussionController extends Controller
      */
     public function create()
     {
-        //
+      return view('discussion.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class DiscussionController extends Controller
      */
     public function store(StoreDiscussionRequest $request)
     {
-        //
+      $discussion=new Discussion();
+      $discussion->title=$request->title;
+      $discussion->description=$request->description;
+      $discussion->save();
     }
 
     /**
