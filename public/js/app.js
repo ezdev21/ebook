@@ -37872,10 +37872,7 @@ var render = function () {
                   ])
                 : _c(
                     "div",
-                    {
-                      staticClass:
-                        "flex text-white text-2xl w-full items-center",
-                    },
+                    { staticClass: "flex text-2xl w-full items-center" },
                     [
                       _c(
                         "a",
@@ -37951,7 +37948,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "rounded-4xl mr-5" }, [
-      _c("ul", { staticClass: "flex text-xl" }, [
+      _c("ul", { staticClass: "flex text-xl font-semibold" }, [
         _c("li", { staticClass: "mx-4" }, [
           _c("a", { attrs: { href: "/" } }, [_vm._v("Home")]),
         ]),
@@ -38045,7 +38042,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "py-1 flex justify-between items-center" },
       [
-        _c("div", { staticClass: "text-white text-xl" }, [
+        _c("div", { staticClass: "font-semibold text-xl" }, [
           _c("ul", { staticClass: "flex items-center" }, [
             _c("li", { staticClass: "mx-4" }, [
               _c(

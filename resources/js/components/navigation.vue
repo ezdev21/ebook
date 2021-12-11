@@ -34,7 +34,7 @@
      </div>
      <div v-else class="flex text-2xl w-full items-center">
      <a href="/login" class="mx-2 rounded px-2 py-1 my-auto">LogIn</a>
-     <button class="text-white bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5">
+     <button class="bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5">
        <a href="/register">Register</a>  
      </button>
      </div> 
