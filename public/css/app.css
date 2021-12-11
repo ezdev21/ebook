@@ -31841,15 +31841,15 @@ video {
 }
 
 .text-first{
-  color:#5f9ea0;
+  color:#e4b979;
 }
 
 .border-first{
-  border-color: #4c8183;
+  border-color: #e4b979;
 }
 
 .bg-second{
-  background-color: #b69f8a;
+  background-color: #d1b06a;
 }
 
 .text-second{
@@ -31857,7 +31857,7 @@ video {
 }
 
 .border-second{
-  border-color: #358597;
+  border-color: #8d6428;
 }
 
 @media (min-width: 640px) {

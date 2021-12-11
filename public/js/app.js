@@ -37978,8 +37978,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass:
-          "text-white bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5",
+        staticClass: "bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5",
       },
       [_c("a", { attrs: { href: "/register" } }, [_vm._v("Register")])]
     )
