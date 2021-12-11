@@ -8,7 +8,7 @@
   <div class="py-1 pr-5 mx-2 mx-5">
     <div class="flex justify-between items-center py-1 border-b-2 border-second">
     <div class="rounded-4xl mr-5">
-      <ul class="flex text-xl text-white">
+      <ul class="flex text-xl font-semibold">
         <li class="mx-4"><a href="/">Home</a></li>
         <li class="mx-4"><a href="/about">About</a></li>
         <li class="mx-4"><a href="/events">Events</a></li>
@@ -32,7 +32,7 @@
         </svg>
        </button>   
      </div>
-     <div v-else class="flex text-white text-2xl w-full items-center">
+     <div v-else class="flex text-2xl w-full items-center">
      <a href="/login" class="mx-2 rounded px-2 py-1 my-auto">LogIn</a>
      <button class="text-white bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5">
        <a href="/register">Register</a>  
@@ -55,7 +55,7 @@
     </div> 
    </div>
    <div class="py-1 flex justify-between items-center">
-    <div class="text-white text-xl">
+    <div class="font-semibold text-xl">
       <ul class="flex items-center">
        <li class="mx-4"><a class="mx-auto no-underline" href="/">Entertainment</a></li>
        <li class="mx-4"><a class="mx-auto no-underline" href="/">Research</a></li>
