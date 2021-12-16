@@ -13,6 +13,11 @@ Auth::routes();
 
 Route::get('/home', [BookController::class, 'index'])->name('home');
 
+Route::get('/login/google',[LoginController::class,'redirectToGoogle'])->name('login.google');
+Route::get('/login/google/callback',LoginController::class,'handleGoogleCallback');
+Route::get('/login/facebook',[LoginController::class,'redirectToFacebook'])->name('login.facebook');
+Route::get('/login/facebook/callback',LoginController::class,'handleFacebookCallback');
+
 Route::prefix('book')->group(function (){
  Route::get('read/{id}',[BookController::class,'read'])->name('book.read');
  Route::get('show/{id}',[BookController::class,'show'])->name('book.show');
