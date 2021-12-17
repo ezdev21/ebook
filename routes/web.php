@@ -38,6 +38,31 @@ Route::prefix('author')->group(function(){
   Route::patch('update',[AuthorController::class,'update']);
   Route::delete('delete',[AuthorController::class,'destroy']);
 });
+Route::prefix('megazine')->group(function(){
+  Route::get('all',[MegazineController::class,'index']);
+  Route::get('create',[MegazineController::class,'create']);
+  Route::post('store',[MegazineController::class,'store']);
+  Route::get('edit/{id}',[MegazineController::class,'edit']);
+  Route::patch('update',[MegazineController::class,'update']);
+  Route::delete('delete',[MegazineController::class,'destroy']);
+});
+Route::prefix('newspaper')->group(function(){
+  Route::get('all',[NewspaperController::class,'index']);
+  Route::get('create',[NewspaperController::class,'create']);
+  Route::post('store',[NewspaperController::class,'store']);
+  Route::get('edit/{id}',[NewspaperController::class,'edit']);
+  Route::patch('update',[NewspaperController::class,'update']);
+  Route::delete('delete',[NewspaperController::class,'destroy']);
+});
+Route::prefix('press')->group(function(){
+  Route::get('all',[PressController::class,'index']);
+  Route::get('create',[PressController::class,'create']);
+  Route::post('store',[PressController::class,'store']);
+  Route::get('edit/{id}',[PressController::class,'edit']);
+  Route::patch('update',[PressController::class,'update']);
+  Route::delete('delete',[PressController::class,'destroy']);
+});
+
 
 Route::prefix('category')->group(function(){
  Route::get('all',[CategoryController::class,'index']);
