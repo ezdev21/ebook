@@ -7,8 +7,8 @@
   <div class="fixed bottom-20 right-10 p-5 bg-first  w-max rounded-3xl">
     <form id="search-form" action="{{route('search')}}" class="hidden">
       @csrf
-      <select name="catalog"></select>
-      <input type="text" name="query">
+      <select name="catalog" id="catalog"></select>
+      <input type="text" name="searchQuery" id="searchQuery">
     </form>
     <search-component/>
   </div> 

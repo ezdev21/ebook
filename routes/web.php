@@ -6,11 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
-use App\Models\Book;
+use App\Http\Controllers\SearchController;
 use App\Models\Category;
-use App\Models\Megazine;
-use App\Models\Newspaper;
-use Illuminate\Http\Request;
 
 Route::get('/',function(){
   $categories=Category::all();
@@ -26,8 +23,8 @@ Route::get('/home', [BookController::class, 'index'])->name('home');
 // Route::get('/login/facebook',[LoginController::class,'redirectToFacebook'])->name('login.facebook');
 // Route::get('/login/facebook/callback',LoginController::class,'handleFacebookCallback');
 
-Route::prefix('search',function(){
-  Route::post('all',[SearchController::class,'searchAll']);
+Route::prefix('search')->group(function(){
+  Route::get('all',[SearchController::class,'searchAll'])->name('search');
   Route::post('book',[SearchController::class,'searchBook']);
   Route::post('megazine',[SearchController::class,'searchMegazine']);
   Route::post('newspaper',[SearchController::class,'searchNewspaper']);

@@ -1986,7 +1986,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       catalogs: [],
-      query: ''
+      query: '',
+      catalog: ''
     };
   },
   mounted: function mounted() {
@@ -1996,9 +1997,14 @@ __webpack_require__.r(__webpack_exports__);
     getCatalogs: function getCatalogs() {
       var _this = this;
 
-      aios.get('/catalog/all').then(function (res) {
-        _this.categories = res.data.categories;
+      axios.get('/catalog/all').then(function (res) {
+        _this.catalogs = res.data.catalogs;
       });
+    },
+    search: function search() {
+      document.getElementById('catalog').value = this.catalog;
+      document.getElementById('searchQuery').value = this.query;
+      document.getElementById('search-form').submit();
     }
   }
 });
@@ -37759,7 +37765,10 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex justify-evenly items-center bg-first" },
+    {
+      staticClass:
+        "flex justify-evenly items-center bg-first rounded-b-2 rounded-xl",
+    },
     [
       _c("div", {}, [
         _c(
@@ -38118,7 +38127,16 @@ var render = function () {
     _vm._v(" "),
     _c(
       "form",
-      { staticClass: "flex", attrs: { action: "/search", method: "POST" } },
+      {
+        staticClass: "flex",
+        attrs: { method: "POST" },
+        on: {
+          submit: function ($event) {
+            $event.preventDefault()
+            return _vm.search($event)
+          },
+        },
+      },
       [
         _c(
           "select",
@@ -38126,9 +38144,9 @@ var render = function () {
           [
             _c("option", { attrs: { value: "" } }, [_vm._v("Catalog")]),
             _vm._v(" "),
-            _vm._l(_vm.categories, function (category) {
-              return _c("option", { key: category.id, attrs: { value: "" } }, [
-                _vm._v(_vm._s(category.name)),
+            _vm._l(_vm.catalogs, function (catalog) {
+              return _c("option", { key: catalog.id, attrs: { value: "" } }, [
+                _vm._v(_vm._s(catalog.name)),
               ])
             }),
           ],

@@ -4,7 +4,7 @@
    <form @submit.prevent="search" method="POST" class="flex">
      <select class="text-gray-700 px-2 text-xl border-r-2 border-first">
        <option value="">Catalog</option>
-       <option v-for="category in categories" :key="category.id" value="">{{category.name}}</option>
+       <option v-for="catalog in catalogs" :key="catalog.id" value="">{{catalog.name}}</option>
      </select>
      <input type="text" v-model="query" required class="text-second w-96 py-2.5 px-3 text-lg lg:text-xl outline-none focus:border-b-2 border-second" placeholder="search catalog">
      <button type="submit" class="bg-second capitalize rounded-r-3xl lg:rounded-r-3xl xl:rounded-r-3xl 2xl:rounded-r-3xl text-xl lg:text-3xl xl:text-2xl 2xl:text-2xl py-2.5 px-5 my-auto">
@@ -29,14 +29,14 @@ export default {
  },
  methods:{
   getCatalogs(){
-    aios.get('/catalog/all')
+    axios.get('/catalog/all')
     .then(res=>{
-      this.categories=res.data.categories;
+      this.catalogs=res.data.catalogs;
     });
   },
   search(){
-    document.getElementByName('catalog').value=this.catalog;
-    document.getElementByName('query').value=this.query;
+    document.getElementById('catalog').value=this.catalog;
+    document.getElementById('searchQuery').value=this.query;
     document.getElementById('search-form').submit();
   }
  }
