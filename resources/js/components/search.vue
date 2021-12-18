@@ -1,7 +1,7 @@
 <template>
  <div class="rounded-lt-4xl rounded-rb-4xl p-5">
    <h1 class="text-2xl text-center mb-2">Search</h1>
-   <form @submit.prevent="search" class="flex">
+   <form @submit.prevent="search" method="POST" class="flex">
      <select class="text-gray-700 px-2 text-xl border-r-2 border-first">
        <option value="">Catalog</option>
        <option v-for="category in categories" :key="category.id" value="">{{category.name}}</option>
@@ -20,7 +20,8 @@ export default {
  data(){
   return{
    catalogs:[], 
-   query:''
+   query:'',
+   catalog:''
   }
  },
  mounted(){
@@ -34,7 +35,8 @@ export default {
     });
   },
   search(){
-    document.getElementById('query').value=this.query;
+    document.getElementByName('catalog').value=this.catalog;
+    document.getElementByName('query').value=this.query;
     document.getElementById('search-form').submit();
   }
  }

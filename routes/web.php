@@ -26,10 +26,12 @@ Route::get('/home', [BookController::class, 'index'])->name('home');
 // Route::get('/login/facebook',[LoginController::class,'redirectToFacebook'])->name('login.facebook');
 // Route::get('/login/facebook/callback',LoginController::class,'handleFacebookCallback');
 
+Route::post('search',[SearchController::class,'searchAll']);
 Route::post('search',function(Request $request){
-  $books=Book::where("title","LIKE","%{$request->query}%");
-  $megazines=Megazine::where("title","LIKE","%{$request->query}%");
-  $newspapers=Newspaper::where("title","LIKE","%{$request->query}%");
+  $query=$request->query;
+  $books=Book::where("title","LIKE","%${query}%");
+  $megazines=Megazine::where("title","LIKE","%${query}%");
+  $newspapers=Newspaper::where("title","LIKE","%${query}%");
   return view('search',compact('books','megazines','newspapers'));
 })->name('search');
 

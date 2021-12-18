@@ -1999,10 +1999,6 @@ __webpack_require__.r(__webpack_exports__);
       aios.get('/catalog/all').then(function (res) {
         _this.categories = res.data.categories;
       });
-    },
-    search: function search() {
-      document.getElementById('query').value = this.query;
-      document.getElementById('search-form').submit();
     }
   }
 });
@@ -38118,21 +38114,11 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "rounded-lt-4xl rounded-rb-4xl p-5" }, [
-    _c("h1", { staticClass: "text-2xl text-center font-bold mb-3" }, [
-      _vm._v("Search"),
-    ]),
+    _c("h1", { staticClass: "text-2xl text-center mb-2" }, [_vm._v("Search")]),
     _vm._v(" "),
     _c(
       "form",
-      {
-        staticClass: "flex",
-        on: {
-          submit: function ($event) {
-            $event.preventDefault()
-            return _vm.search($event)
-          },
-        },
-      },
+      { staticClass: "flex", attrs: { action: "/search", method: "POST" } },
       [
         _c(
           "select",
