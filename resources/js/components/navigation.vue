@@ -78,7 +78,6 @@ export default {
    },
    data(){
     return{
-      user:{},
       categoryId:'all',
       searchQuery:'',
       categories:[],
