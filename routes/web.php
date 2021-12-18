@@ -31,7 +31,7 @@ Route::post('search',function(Request $request){
   $megazines=Megazine::where("title","LIKE","%{$request->query}%");
   $newspapers=Newspaper::where("title","LIKE","%{$request->query}%");
   return view('search',compact('books','megazines','newspapers'));
-});
+})->name('search');
 
 Route::prefix('book')->group(function (){
  Route::get('read/{id}',[BookController::class,'read'])->name('book.read');

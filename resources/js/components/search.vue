@@ -1,5 +1,6 @@
 <template>
- <div class="rounded-lt-4xl rounded-rb-4xl p-5 bg-pink-600">
+ <div class="rounded-lt-4xl rounded-rb-4xl p-5">
+   <h1 class="text-2xl text-center text-white font-bold">Search</h1>
    <form @submit.prevent="search" class="flex">
      <select class="text-gray-700 px-2 text-xl border-r-2 border-first">
        <option value="">Category</option>
