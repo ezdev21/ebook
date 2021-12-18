@@ -18,14 +18,24 @@
 export default {
  data(){
   return{
+   categories:[], 
    query:''
   }
  },
  mounted(){
-
+  this.getCategories();
  },
  methods:{
-  
+  getCategories(){
+    aios.get('/category/all')
+    .then(res=>{
+      this.categories=res.data.categories;
+    });
+  },
+  search(){
+    document.getElementById('query').value=this.query;
+    document.getElementById('search-form').submit();
+  }
  }
 }
 </script>
