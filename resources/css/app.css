@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 .bg-first{
- background-color: #e4b979;
+ background-color: #cedf37;
 }
 .text-first{
- color:#e4b979;
+ color:#cedf37;
 }
 .border-first{
- border-color: #e4b979;
+ border-color: #cedf37;
 }
 .bg-second{
- background-color: #d1b06a;
+ background-color: #909e0c;
 }
 .text-second{
- color: #358597;
+ color: #909e0c;
 }
 .border-second{
- border-color: #8d6428;
+ border-color: #555e09;
 }

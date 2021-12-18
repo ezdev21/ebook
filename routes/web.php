@@ -6,8 +6,12 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Models\Category;
 
-Route::get('/',[BookController::class,'index'])->name('books');
+Route::get('/',function(){
+  $categories=Category::all();
+  return view('welcome',compact('categories'));
+});
 
 Auth::routes();
 
@@ -37,6 +41,15 @@ Route::prefix('author')->group(function(){
   Route::get('edit/{id}',[AuthorController::class,'edit']);
   Route::patch('update',[AuthorController::class,'update']);
   Route::delete('delete',[AuthorController::class,'destroy']);
+});
+
+Route::prefix('event')->group(function(){
+  Route::get('all',[EventController::class,'index']);
+  Route::get('create',[EventController::class,'create']);
+  Route::post('store',[EventController::class,'store']);
+  Route::get('edit/{id}',[EventController::class,'edit']);
+  Route::patch('update',[EventController::class,'update']);
+  Route::delete('delete',[EventController::class,'destroy']);
 });
 
 Route::prefix('megazine')->group(function(){
