@@ -1981,21 +1981,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      categories: [],
+      catalogs: [],
       query: ''
     };
   },
   mounted: function mounted() {
-    this.getCategories();
+    this.getCatalogs();
   },
   methods: {
-    getCategories: function getCategories() {
+    getCatalogs: function getCatalogs() {
       var _this = this;
 
-      aios.get('/category/all').then(function (res) {
+      aios.get('/catalog/all').then(function (res) {
         _this.categories = res.data.categories;
       });
     },
@@ -37983,7 +37984,8 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5",
+        staticClass:
+          "bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5 text-white",
       },
       [_c("a", { attrs: { href: "/register" } }, [_vm._v("Register")])]
     )
@@ -38116,6 +38118,10 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "rounded-lt-4xl rounded-rb-4xl p-5" }, [
+    _c("h1", { staticClass: "text-2xl text-center font-bold mb-3" }, [
+      _vm._v("Search"),
+    ]),
+    _vm._v(" "),
     _c(
       "form",
       {
@@ -38132,7 +38138,7 @@ var render = function () {
           "select",
           { staticClass: "text-gray-700 px-2 text-xl border-r-2 border-first" },
           [
-            _c("option", { attrs: { value: "" } }, [_vm._v("Category")]),
+            _c("option", { attrs: { value: "" } }, [_vm._v("Catalog")]),
             _vm._v(" "),
             _vm._l(_vm.categories, function (category) {
               return _c("option", { key: category.id, attrs: { value: "" } }, [

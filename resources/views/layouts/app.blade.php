@@ -18,7 +18,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="">
  <div id="app">
   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
     @csrf

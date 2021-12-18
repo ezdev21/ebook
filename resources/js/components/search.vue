@@ -1,9 +1,9 @@
 <template>
  <div class="rounded-lt-4xl rounded-rb-4xl p-5">
-   <h1 class="text-2xl text-center text-white font-bold">Search</h1>
+   <h1 class="text-2xl text-center mb-2">Search</h1>
    <form @submit.prevent="search" class="flex">
      <select class="text-gray-700 px-2 text-xl border-r-2 border-first">
-       <option value="">Category</option>
+       <option value="">Catalog</option>
        <option v-for="category in categories" :key="category.id" value="">{{category.name}}</option>
      </select>
      <input type="text" v-model="query" required class="text-second w-96 py-2.5 px-3 text-lg lg:text-xl outline-none focus:border-b-2 border-second" placeholder="search catalog">
@@ -19,16 +19,16 @@
 export default {
  data(){
   return{
-   categories:[], 
+   catalogs:[], 
    query:''
   }
  },
  mounted(){
-  this.getCategories();
+  this.getCatalogs();
  },
  methods:{
-  getCategories(){
-    aios.get('/category/all')
+  getCatalogs(){
+    aios.get('/catalog/all')
     .then(res=>{
       this.categories=res.data.categories;
     });
