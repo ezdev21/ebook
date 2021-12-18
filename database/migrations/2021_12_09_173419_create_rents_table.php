@@ -15,6 +15,9 @@ class CreateRentsTable extends Migration
     {
         Schema::create('rents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('book_id');
+            $table->string('type');//book newspaper megazine
             $table->timestamps();
         });
     }

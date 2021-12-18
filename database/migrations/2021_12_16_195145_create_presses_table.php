@@ -15,6 +15,7 @@ class CreatePressesTable extends Migration
     {
         Schema::create('presses', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }

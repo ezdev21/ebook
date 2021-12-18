@@ -15,6 +15,10 @@ class CreateStuffsTable extends Migration
     {
         Schema::create('stuffs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone_number');
+            $table->string('job');
             $table->timestamps();
         });
     }
