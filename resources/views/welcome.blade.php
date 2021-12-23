@@ -1,7 +1,7 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <div id="app" class="bg-liberary bg-fixed w-full h-full bg-cover">
-  <div class="w-full lg:w-5/6 mx-auto">
+  <div class="w-full lg:w-5/6 mx-auto p-3">
     <navigation-component/>
   </div>
   <div class="fixed bottom-20 right-10 p-5 bg-first  w-max rounded-3xl">
