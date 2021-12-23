@@ -1915,6 +1915,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     user: {
@@ -2001,8 +2002,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       catalogs: [],
       query: '',
-      searchType: '',
-      searchBy: ''
+      searchType: 'catalog',
+      searchBy: 'keyword'
     };
   },
   mounted: function mounted() {},
@@ -37966,24 +37967,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "rounded-4xl mr-5" }, [
-      _c("ul", { staticClass: "flex text-xl font-semibold" }, [
-        _c("li", { staticClass: "mx-4" }, [
-          _c("a", { attrs: { href: "/" } }, [_vm._v("Home")]),
-        ]),
+      _c("ul", { staticClass: "flex text-xl space-x-4 font-semibold" }, [
+        _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("Home")])]),
         _vm._v(" "),
-        _c("li", { staticClass: "mx-4" }, [
-          _c("a", { attrs: { href: "/about" } }, [_vm._v("About")]),
-        ]),
+        _c("li", [_c("a", { attrs: { href: "/about" } }, [_vm._v("About")])]),
         _vm._v(" "),
-        _c("li", { staticClass: "mx-4" }, [
-          _c("a", { attrs: { href: "/events" } }, [_vm._v("Events")]),
-        ]),
+        _c("li", [_c("a", { attrs: { href: "/events" } }, [_vm._v("Events")])]),
         _vm._v(" "),
-        _c("li", { staticClass: "mx-4" }, [
-          _c("a", { attrs: { href: "/news" } }, [_vm._v("News")]),
-        ]),
+        _c("li", [_c("a", { attrs: { href: "/news" } }, [_vm._v("News")])]),
         _vm._v(" "),
-        _c("li", { staticClass: "mx-4" }, [
+        _c("li", [
           _c("a", { attrs: { href: "/discussion" } }, [_vm._v("Discussion")]),
         ]),
       ]),
@@ -38007,9 +38000,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "hover:bg-blue-200 px-5 py-1" }, [
-      _c("a", { staticClass: "text-white", attrs: { href: "/" } }, [
-        _vm._v("home"),
-      ]),
+      _c("a", { staticClass: "text-white", attrs: { href: "" } }),
     ])
   },
   function () {
@@ -38017,7 +38008,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "hover:bg-blue-200 px-5 py-1" }, [
-      _c("a", { attrs: { href: "/profile/edit" } }, [_vm._v("my profile")]),
+      _c("a", { attrs: { href: "" } }),
     ])
   },
   function () {
@@ -38025,7 +38016,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "hover:bg-blue-200 px-5 py-1" }, [
-      _c("a", { attrs: { href: "/user/products" } }, [_vm._v("my products")]),
+      _c("a", { attrs: { href: "" } }),
     ])
   },
   function () {
@@ -38033,7 +38024,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "hover:bg-blue-200 px-5 py-1" }, [
-      _c("a", { attrs: { href: "/product/create" } }, [_vm._v("add product")]),
+      _c("a", { attrs: { href: "" } }),
     ])
   },
   function () {
@@ -38041,7 +38032,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "hover:bg-blue-200 px-5 py-1" }, [
-      _c("a", { attrs: { href: "/book/rent" } }, [_vm._v("rent")]),
+      _c("a", { attrs: { href: "" } }),
     ])
   },
   function () {
@@ -38049,7 +38040,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "hover:bg-blue-200 px-5 py-1" }, [
-      _c("a", { attrs: { href: "/about" } }, [_vm._v("contact us")]),
+      _c("a", { attrs: { href: "" } }),
     ])
   },
   function () {
@@ -38061,47 +38052,77 @@ var staticRenderFns = [
       { staticClass: "py-1 flex justify-between items-center" },
       [
         _c("div", { staticClass: "font-semibold text-xl" }, [
-          _c("ul", { staticClass: "flex items-center" }, [
-            _c("li", { staticClass: "mx-4" }, [
-              _c(
-                "a",
-                { staticClass: "mx-auto no-underline", attrs: { href: "/" } },
-                [_vm._v("Entertainment")]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "mx-4" }, [
-              _c(
-                "a",
-                { staticClass: "mx-auto no-underline", attrs: { href: "/" } },
-                [_vm._v("Research")]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "mx-4" }, [
-              _c(
-                "a",
-                { staticClass: "mx-auto no-underline", attrs: { href: "/" } },
-                [_vm._v("Kids")]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "mx-4 " }, [
-              _c(
-                "a",
-                { staticClass: "mx-auto no-underline", attrs: { href: "/" } },
-                [_vm._v("Teens")]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "mx-4 " }, [
-              _c(
-                "a",
-                { staticClass: "mx-auto no-underline", attrs: { href: "/" } },
-                [_vm._v("Adults")]
-              ),
-            ]),
-          ]),
+          _c(
+            "ul",
+            { staticClass: "flex items-center space-x-4 text-gray-700" },
+            [
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "hover:no-underline",
+                    attrs: { href: "/explore" },
+                  },
+                  [_vm._v("Explore")]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "hover:no-underline",
+                    attrs: { href: "/entertainment" },
+                  },
+                  [_vm._v("Entertainment")]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "hover:no-underline",
+                    attrs: { href: "/research" },
+                  },
+                  [_vm._v("Research")]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "hover:no-underline",
+                    attrs: { href: "/kids" },
+                  },
+                  [_vm._v("Kids")]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "hover:no-underline",
+                    attrs: { href: "/teens" },
+                  },
+                  [_vm._v("Teens")]
+                ),
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "hover:no-underline",
+                    attrs: { href: "/adults" },
+                  },
+                  [_vm._v("Adults")]
+                ),
+              ]),
+            ]
+          ),
         ]),
       ]
     )
@@ -38129,13 +38150,13 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "rounded-lt-4xl rounded-rb-4xl p-5" }, [
+  return _c("div", { staticClass: "rounded-lt-4xl rounded-rb-4xl p-3" }, [
     _c("h1", { staticClass: "text-2xl text-center mb-2" }, [_vm._v("Search")]),
     _vm._v(" "),
     _c(
       "form",
       {
-        staticClass: "flex",
+        staticClass: "flex items-center",
         attrs: { method: "POST" },
         on: {
           submit: function ($event) {
@@ -38145,7 +38166,7 @@ var render = function () {
         },
       },
       [
-        _c("p", { staticClass: "mx-2 text-xl" }, [_vm._v("search the")]),
+        _c("p", { staticClass: "mx-2 text-2xl" }, [_vm._v("Search The")]),
         _vm._v(" "),
         _c(
           "select",
@@ -38158,7 +38179,7 @@ var render = function () {
                 expression: "searchType",
               },
             ],
-            staticClass: "text-gray-700 px-2 text-xl border-r-2 border-first",
+            staticClass: "text-gray-700 p-2 text-xl border-r-2 border-first",
             on: {
               change: function ($event) {
                 var $$selectedVal = Array.prototype.filter
@@ -38194,7 +38215,7 @@ var render = function () {
           ]
         ),
         _vm._v(" "),
-        _c("p", { staticClass: "mx-2 text-xl" }, [_vm._v("by")]),
+        _c("p", { staticClass: "mx-2 text-2xl" }, [_vm._v("By")]),
         _vm._v(" "),
         _c(
           "select",
@@ -38207,7 +38228,7 @@ var render = function () {
                 expression: "searchBy",
               },
             ],
-            staticClass: "text-gray-700 px-2 text-xl border-r-2 border-first",
+            staticClass: "text-gray-700 p-2 text-xl border-r-2 border-first",
             on: {
               change: function ($event) {
                 var $$selectedVal = Array.prototype.filter

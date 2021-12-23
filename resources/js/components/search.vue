@@ -2,16 +2,16 @@
  <div class="rounded-lt-4xl rounded-rb-4xl p-3">
    <h1 class="text-2xl text-center mb-2">Search</h1>
    <form @submit.prevent="search" method="POST" class="flex items-center">
-     <p class="mx-2 text-2xl">search the</p>
-     <select v-model="searchType" class="text-gray-700 px-2 text-xl border-r-2 border-first">
+     <p class="mx-2 text-2xl">Search The</p>
+     <select v-model="searchType" class="text-gray-700 p-2 text-xl border-r-2 border-first">
        <option value="catalog" selected>Catalog</option>
        <option value="book">Books</option>
        <option value="megazine">Megazines</option>
        <option value="newspaper">Newspapers</option>
        <option value="event">Events</option>
      </select>
-     <p class="mx-2 text-2xl">by</p>
-     <select v-model="searchBy" class="text-gray-700 px-2 text-xl border-r-2 border-first">
+     <p class="mx-2 text-2xl">By</p>
+     <select v-model="searchBy" class="text-gray-700 p-2 text-xl border-r-2 border-first">
        <option value="keyword" selected>keyword</option>
        <option value="author">Author</option>
        <option value="title">Title</option>

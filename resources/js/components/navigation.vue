@@ -8,12 +8,12 @@
   <div class="py-1 pr-5 mx-2 mx-5">
     <div class="flex justify-between items-center py-1 border-b-2 border-second">
     <div class="rounded-4xl mr-5">
-      <ul class="flex text-xl font-semibold">
-        <li class="mx-4"><a href="/">Home</a></li>
-        <li class="mx-4"><a href="/about">About</a></li>
-        <li class="mx-4"><a href="/events">Events</a></li>
-        <li class="mx-4"><a href="/news">News</a></li>
-        <li class="mx-4"><a href="/discussion">Discussion</a></li>
+      <ul class="flex text-xl space-x-4 font-semibold">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/discussion">Discussion</a></li>
       </ul>
     </div>
     <div class="hidden">
@@ -35,17 +35,17 @@
      <div v-else class="flex text-2xl w-full items-center">
      <a href="/login" class="mx-2 rounded px-2 py-1 my-auto">LogIn</a>
      <button class="bg-second flex items-center mx-2 rounded-3xl px-5 py-1.5 text-white">
-       <a href="/register">Register</a>  
+       <a href="/register">Register</a>
      </button>
-     </div> 
+     </div>
      <div v-if="userDropdownMenu" class="fixed z-20 text-xl bg-gray-100 top-2 right-2">
       <ul>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/" class="text-white">home</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/profile/edit">my profile</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/user/products">my products</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/product/create">add product</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/book/rent">rent</a></li>
-       <li class="hover:bg-blue-200 px-5 py-1"><a href="/about">contact us</a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href="" class="text-white"></a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href=""></a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href=""></a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href=""></a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href=""></a></li>
+       <li class="hover:bg-blue-200 px-5 py-1"><a href=""></a></li>
        <li class="hover:bg-blue-200 px-5 py-1">
         <button @click="logout">logout</button>  
        </li>  
@@ -56,12 +56,13 @@
    </div>
    <div class="py-1 flex justify-between items-center">
     <div class="font-semibold text-xl">
-      <ul class="flex items-center">
-       <li class="mx-4"><a class="mx-auto no-underline" href="/">Entertainment</a></li>
-       <li class="mx-4"><a class="mx-auto no-underline" href="/">Research</a></li>
-       <li class="mx-4"><a class="mx-auto no-underline" href="/">Kids</a></li>
-       <li class="mx-4 "><a class="mx-auto no-underline" href="/">Teens</a></li>
-       <li class="mx-4 "><a class="mx-auto no-underline" href="/">Adults</a></li>
+      <ul class="flex items-center space-x-4">
+       <li><a class="hover:no-underline" href="/explore">Explore</a></li>
+       <li><a class="hover:no-underline" href="/entertainment">Entertainment</a></li>
+       <li><a class="hover:no-underline" href="/research">Research</a></li>
+       <li><a class="hover:no-underline" href="/kids">Kids</a></li>
+       <li><a class="hover:no-underline" href="/teens">Teens</a></li>
+       <li><a class="hover:no-underline" href="/adults">Adults</a></li>
       </ul>
     </div>
    </div>
