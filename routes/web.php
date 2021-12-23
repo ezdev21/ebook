@@ -35,8 +35,8 @@ Route::prefix('search')->group(function(){
 Route::prefix('book')->group(function (){
  Route::get('read/{id}',[BookController::class,'read'])->name('book.read');
  Route::get('show/{id}',[BookController::class,'show'])->name('book.show');
- Route::get('upload',[BookController::class,'create'])->name('book.create');
- Route::post('upload',[BookController::class,'store'])->name('book.upload');
+ Route::get('create',[BookController::class,'create'])->name('book.create');
+ Route::post('store',[BookController::class,'store'])->name('book.upload');
  Route::get('download/{id}',[BookController::class,'download'])->name('book.download');
  Route::post('delete/{id}',[BookController::class,'delete'])->name('book.delete');
  Route::post('search',[BookController::class,'search'])->name('book.search');
