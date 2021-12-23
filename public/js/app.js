@@ -1982,27 +1982,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       catalogs: [],
       query: '',
-      catalog: ''
+      searchType: '',
+      searchBy: ''
     };
   },
-  mounted: function mounted() {
-    this.getCatalogs();
-  },
+  mounted: function mounted() {},
   methods: {
-    getCatalogs: function getCatalogs() {
-      var _this = this;
-
-      axios.get('/catalog/all').then(function (res) {
-        _this.catalogs = res.data.catalogs;
-      });
-    },
     search: function search() {
-      document.getElementById('catalog').value = this.catalog;
+      document.getElementById('searchType').value = this.searchType;
+      document.getElementById('searchBy').value = this.searchBy;
       document.getElementById('searchQuery').value = this.query;
       document.getElementById('search-form').submit();
     }
@@ -38138,19 +38145,102 @@ var render = function () {
         },
       },
       [
+        _c("p", { staticClass: "mx-2 text-xl" }, [_vm._v("search the")]),
+        _vm._v(" "),
         _c(
           "select",
-          { staticClass: "text-gray-700 px-2 text-xl border-r-2 border-first" },
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.searchType,
+                expression: "searchType",
+              },
+            ],
+            staticClass: "text-gray-700 px-2 text-xl border-r-2 border-first",
+            on: {
+              change: function ($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function (o) {
+                    return o.selected
+                  })
+                  .map(function (o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.searchType = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+            },
+          },
           [
-            _c("option", { attrs: { value: "" } }, [_vm._v("Catalog")]),
+            _c("option", { attrs: { value: "catalog", selected: "" } }, [
+              _vm._v("Catalog"),
+            ]),
             _vm._v(" "),
-            _vm._l(_vm.catalogs, function (catalog) {
-              return _c("option", { key: catalog.id, attrs: { value: "" } }, [
-                _vm._v(_vm._s(catalog.name)),
-              ])
-            }),
-          ],
-          2
+            _c("option", { attrs: { value: "book" } }, [_vm._v("Books")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "megazine" } }, [
+              _vm._v("Megazines"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "newspaper" } }, [
+              _vm._v("Newspapers"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "event" } }, [_vm._v("Events")]),
+          ]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "mx-2 text-xl" }, [_vm._v("by")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.searchBy,
+                expression: "searchBy",
+              },
+            ],
+            staticClass: "text-gray-700 px-2 text-xl border-r-2 border-first",
+            on: {
+              change: function ($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function (o) {
+                    return o.selected
+                  })
+                  .map(function (o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.searchBy = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              },
+            },
+          },
+          [
+            _c("option", { attrs: { value: "keyword", selected: "" } }, [
+              _vm._v("keyword"),
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "author" } }, [_vm._v("Author")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "title" } }, [_vm._v("Title")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "subject" } }, [_vm._v("Subject")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "tag" } }, [_vm._v("Tag")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "list" } }, [_vm._v("List")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "user" } }, [_vm._v("User")]),
+          ]
         ),
         _vm._v(" "),
         _c("input", {
@@ -38164,7 +38254,7 @@ var render = function () {
           ],
           staticClass:
             "text-second w-96 py-2.5 px-3 text-lg lg:text-xl outline-none focus:border-b-2 border-second",
-          attrs: { type: "text", required: "", placeholder: "search catalog" },
+          attrs: { type: "text", required: "", placeholder: "search..." },
           domProps: { value: _vm.query },
           on: {
             input: function ($event) {
