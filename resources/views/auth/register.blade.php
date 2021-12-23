@@ -33,7 +33,7 @@
                         </label>
 
                         <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email text-xl text-first my-2 w-full text-xl p-2 rounded-xl border-2 border-gray-300"
+                            class="form-input w-full @error('email') border-red-500 @enderror text-xl text-first my-2 w-full text-xl p-2 rounded-xl border-2 border-gray-300" name="email"
                             value="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')

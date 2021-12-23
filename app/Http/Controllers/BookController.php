@@ -10,11 +10,10 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+      $this->middleware('auth')->except(['index','search','show']);
+    }
     public function index()
     {
         $books=Book::latest()->take(40)->inRandomOrder()->get();

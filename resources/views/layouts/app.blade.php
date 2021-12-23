@@ -24,7 +24,7 @@
     @csrf
   </form>
   <div class="w-full lg:w-11/12 mx-auto">
-   <navigation-component @auth :user="{{auth()->user}}" @endauth/>   
+   <navigation-component @auth :user="{{auth()->user()}}" @endauth/>   
   </div>
   <main class=" py-1">
     @yield('content')
