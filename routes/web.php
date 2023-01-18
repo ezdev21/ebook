@@ -106,3 +106,7 @@ Route::prefix('comment')->group(function(){
  Route::patch('update',[CommentController::class,'update']);
  Route::delete('delete',[CommentController::class,'destroy']);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
