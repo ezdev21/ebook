@@ -17,7 +17,7 @@
             <p>
              <span class="text-xl">{{$book->star->count()}}</span>
             @auth
-              <star-component book-id="{{$book->id}}" user-id="{{Auth::user()->id}}"/>
+              <StarBook book-id="{{$book->id}}" user-id="{{Auth::user()->id}}"/>
             @endauth
             </p>
             <div>
